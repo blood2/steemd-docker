@@ -30,13 +30,13 @@ git clone https://github.com/blood2/steemd-docker
 build the docker image   
 ```
 cd steemd-docker
-build -t steemd .  
+docker build -t steemd .  
 ```
   
 
 ## Edit config.ini
 
-copy the sample file  
+copy the sample file to create config.ini 
   
 ```sh
 cp config-example.ini config.ini
@@ -52,11 +52,10 @@ to launch the steemd process to background
 docker run -d --name=steemit -v `pwd`:/usr/local/steem/witness_node_data_dir steemd
 ```
 
-
 ## Attaching to docker's output
 
-to attach
+to attach and follow the output:
 ```
 docker attach --sig-proxy=false steemit
 ```
-CTRL+c will detach the process
+CTRL+c will detach the process to background
