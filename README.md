@@ -1,7 +1,7 @@
 # steemd for docker
 
 a Docker build for steemd  
-for running a node and mining steem currency  
+for running a node and mining steem currency in a docker container
 steemit git repository https://github.com/steemit/steem
 
 ## Getting Started
