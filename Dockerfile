@@ -21,3 +21,4 @@ RUN make
 RUN make install
 WORKDIR /usr/local/steem
 CMD ["steemd"]
+EXPOSE 8090
