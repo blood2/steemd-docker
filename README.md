@@ -52,6 +52,11 @@ to launch the steemd process to background
 docker run -d --name=steemit -v `pwd`:/usr/local/steem/witness_node_data_dir steemd
 ```
 
+if you wish to expose the RPC port for the host, run with `-p`
+```
+docker run -d --name=steemit -p 127.0.0.1:8090:8090 -v `pwd`:/usr/local/steem/witness_node_data_dir steemd
+```
+
 ## Attaching to docker's output
 
 to attach and follow the output:
