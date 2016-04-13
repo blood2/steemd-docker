@@ -20,5 +20,5 @@ RUN cmake .
 RUN make
 RUN make install
 WORKDIR /usr/local/steem
-CMD ["steemd"]
+CMD ["steemd","--rpc-endpoint"]
 EXPOSE 8090
