@@ -16,7 +16,7 @@ WORKDIR /usr/local/steem
 RUN git clone https://github.com/steemit/steem steem-src
 WORKDIR /usr/local/steem/steem-src
 RUN git submodule update --init --recursive
-RUN cmake .
+RUN cmake -DLOW_MEMORY_NODE=ON -DENABLE_CONTENT_PATCHING=OFF .
 RUN make
 RUN make install
 WORKDIR /usr/local/steem

@@ -43,7 +43,8 @@ cp config-example.ini config.ini
 ```
 
 edit the config.ini file, change witnesses names and miners's configuration names+keys  
-also change seed node's IP if needed, and mining-threads
+also change seed node's IP if needed, and mining-threads  
+add additional seed nodes, see steemit's git repository for seed nodes information
 
 ## Running/Mining
 
