@@ -15,6 +15,8 @@ RUN ldconfig
 WORKDIR /usr/local/steem
 RUN git clone https://github.com/steemit/steem steem-src
 WORKDIR /usr/local/steem/steem-src
+RUN git fetch --tags
+RUN git checkout v0.2.0
 RUN git submodule update --init --recursive
 RUN cmake -DLOW_MEMORY_NODE=ON -DENABLE_CONTENT_PATCHING=OFF .
 RUN make
