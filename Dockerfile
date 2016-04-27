@@ -1,17 +1,9 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install -qy build-essential git libssl-dev m4 yasm autogen automake libtool doxygen python-dev autotools-dev libicu-dev libbz2-dev cmake g++ wget pkg-config
+RUN apt-get install -qy build-essential git libssl-dev m4 yasm autogen automake libtool doxygen python-dev autotools-dev libicu-dev libbz2-dev cmake g++ wget pkg-config libgmp-dev libboost-all-dev
 
-#boost from source
-WORKDIR /usr/local/steem
-RUN wget http://sourceforge.net/projects/boost/files/boost/1.60.0/boost_1_60_0.tar.bz2/download -O boost_1_60_0.tar.bz2
-RUN tar jxf boost_1_60_0.tar.bz2
-WORKDIR /usr/local/steem/boost_1_60_0
-RUN ./bootstrap.sh 
-RUN ./b2
-RUN ./b2 install
-RUN ldconfig
+
 WORKDIR /usr/local/steem
 RUN git clone https://github.com/steemit/steem steem-src
 WORKDIR /usr/local/steem/steem-src
